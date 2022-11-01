@@ -36,11 +36,14 @@
             android:name=".UserInterface.SemesterList"
             android:exported="false" />
         <activity
+            android:name=".UserInterface.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserInterface.mainScreen"
             android:exported="false"
             android:parentActivityName=".UserInterface.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UserInterface.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

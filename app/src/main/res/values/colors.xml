@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_100">#F9F2FA</color>
-    <color name="blue_200">#8CD5F1</color>
-    <color name="purple_200">#C395EA</color>
-    <color name="pink_200">#E9AAE4</color>
-    <color name="periwinkle_200">#DCB7F6</color>
+    <color name="darkBlue">#313e78</color>
+    <color name="greyBlue">#8892bf</color>
+    <color name="lighterblue">#9dc9ed</color>
+    <color name="green">#5ea14d</color>
+    <color name="yellow">#e3c22d</color>
+    <color name="grey">#787773</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

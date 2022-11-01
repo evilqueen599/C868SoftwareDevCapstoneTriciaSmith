@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">C868 Software Dev Capstone Tricia Aloufi</string>
+    <string name="app_name">EMD Community College</string>
+    <string name="channel_name">thisChannel</string>
+    <string name="channel_description">thisDescription</string>
 </resources>

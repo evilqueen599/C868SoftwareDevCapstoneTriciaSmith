@@ -39,6 +39,9 @@
             android:name=".UserInterface.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".UserInterface.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserInterface.mainScreen"
             android:exported="false"
             android:parentActivityName=".UserInterface.MainActivity" />

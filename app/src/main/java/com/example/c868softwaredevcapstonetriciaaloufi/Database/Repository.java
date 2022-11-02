@@ -29,6 +29,9 @@ static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUM
 public Repository(Application application) {
     Database db = Database.getDatabase(application);
     mUserDAO = db.userDAO();
+    mSemesterDAO = db.semesterDAO();
+    mClassesDAO = db.classesDAO();
+    mAssignmentsDAO = db.assignmentDAO();
 }
 //Users//
 public List<Users> getAllUsers() {

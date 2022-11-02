@@ -26,7 +26,7 @@ import java.util.List;
 public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_screen_activity);
 
         final RadioButton semesterRad = (RadioButton) findViewById(R.id.semesterRadBtn);
         final RadioButton classRad = (RadioButton) findViewById(R.id.classesRadBtn);
@@ -66,8 +66,7 @@ public class Home extends AppCompatActivity {
         TextView myTextView = (TextView) findViewById(R.id.semesterListTxt);
         myTextView.setText("Semester List");
         Button mainAddButton = (Button) findViewById(R.id.mainAddButton);
-        mainAddButton.setText("Add New Semester");
-
+        mainAddButton.setText("Add A New Semester");
         RecyclerView recyclerView = findViewById(R.id.mainRecyclerView);
         Repository repository = new Repository(getApplication());
         List<Semesters> semesters = repository.getAllSemesters();

@@ -24,6 +24,18 @@
             android:name=".UserInterface.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".UserInterface.Home"
+            android:exported="false" />
+        <activity
+            android:name=".UserInterface.AddSemester"
+            android:exported="false" />
+        <activity
+            android:name=".UserInterface.AddClass"
+            android:exported="false" />
+        <activity
+            android:name=".UserInterface.AddAssignment"
+            android:exported="false" />
+        <activity
             android:name=".UserInterface.MainActivity"
             android:exported="true" >
             <intent-filter>

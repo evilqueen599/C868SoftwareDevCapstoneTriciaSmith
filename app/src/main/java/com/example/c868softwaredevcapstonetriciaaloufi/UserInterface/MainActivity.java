@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
+import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Users;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 

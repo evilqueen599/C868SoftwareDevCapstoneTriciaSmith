@@ -34,7 +34,7 @@ public class Classes {
     private String classNotes;
 
     @ColumnInfo
-    private int SemesterId;
+    private int semesterId;
 
     @Override
     public String toString() {
@@ -48,7 +48,7 @@ public class Classes {
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", classNotes='" + classNotes + '\'' +
-                ", SemesterId=" + SemesterId +
+                ", semesterId=" + semesterId +
                 '}';
     }
 
@@ -62,7 +62,7 @@ public class Classes {
         this.startDate = startDate;
         this.endDate = endDate;
         this.classNotes = classNotes;
-        SemesterId = semesterId;
+        this.semesterId = semesterId;
     }
 
     public int getClassId() {
@@ -138,10 +138,10 @@ public class Classes {
     }
 
     public int getSemesterId() {
-        return SemesterId;
+        return semesterId;
     }
 
     public void setSemesterId(int semesterId) {
-        SemesterId = semesterId;
+        semesterId = semesterId;
     }
 }

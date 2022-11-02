@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeScreen"
+        android:title="Go Back to Main Screen"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/startDateAlert"
+        android:title="Set Start Date Alert"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/endDateAlert"
+        android:title="Set End Date Alert"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/shareClassNotes"
+        android:title="Share Class Note"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/refreshPage"
+        android:title="Refresh This Page"
+        android:orderInCategory="100"/>
+</menu>

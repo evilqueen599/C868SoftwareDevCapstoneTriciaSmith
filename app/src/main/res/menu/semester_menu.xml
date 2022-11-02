@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Go Back to Home"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/SemesterStartAlert"
+        android:title="Set Start Date Alert"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/SemesterEndAlert"
+        android:title="Set End Date Alert"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/refreshPage"
+        android:title="Refresh This Page"
+        android:orderInCategory="100"/>
+</menu>

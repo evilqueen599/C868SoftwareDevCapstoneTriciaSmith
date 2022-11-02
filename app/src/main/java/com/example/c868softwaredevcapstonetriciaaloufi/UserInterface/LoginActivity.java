@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 return true;
             } else if (username.getText().toString().equals(tempuser.getUserName()) && password.getText().toString().equals(tempuser.getPassword())) {
                 Toast.makeText(LoginActivity.this, "Sign in success", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, Home.class);
                 startActivity(intent);
                 return true;
             } else {

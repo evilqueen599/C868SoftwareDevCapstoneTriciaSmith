@@ -1,6 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".UserInterface.AddAssignment">
 
+
+    <TextView
+        android:id="@+id/addAssignmentTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add A New Assignment"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/guidelineTop"
+        app:layout_constraintVertical_bias="0.225" />
+
+
+    <EditText
+        android:id="@+id/assignmentNameTxt"
+        android:layout_width="374dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Assignment Name"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/assignmentTypeBar"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/addAssignmentTxt"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <Button
+        android:id="@+id/endAssignPickerButton"
+        style="?android:spinnerStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="openDueDate"
+        android:textColor="@color/darkBlue"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/addAssignBtn"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@+id/dueDate"
+        app:layout_constraintTop_toBottomOf="@+id/startAssignPickerButton"
+        app:layout_constraintVertical_bias="0.763" />
+
+    <Button
+        android:id="@+id/startAssignPickerButton"
+        style="?android:spinnerStyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="openStartDate"
+        android:textColor="@color/darkBlue"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/endAssignPickerButton"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@+id/startTxt"
+        app:layout_constraintTop_toBottomOf="@+id/assignmentTypeBar"
+        app:layout_constraintVertical_bias="0.763" />
+
+    <TextView
+        android:id="@+id/dueDate"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Select Due Date"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/addAssignBtn"
+        app:layout_constraintEnd_toStartOf="@+id/endAssignPickerButton"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/startTxt"
+        app:layout_constraintVertical_bias="0.806" />
+
+    <TextView
+        android:id="@+id/startTxt"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Select Start Date"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dueDate"
+        app:layout_constraintEnd_toStartOf="@+id/startAssignPickerButton"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/assignmentTypeBar"
+        app:layout_constraintVertical_bias="0.806" />
+
+    <Button
+        android:id="@+id/addAssignBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="59dp"
+        android:text="Add This Assignment"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineTop"
+        app:layout_constraintVertical_bias="0.964" />
+
+
+    <Spinner
+        android:id="@+id/assignmentTypeBar"
+        android:layout_width="279dp"
+        android:layout_height="48dp"
+        android:background="@color/greyBlue"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/assignmentSpinnerAdapter"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/endAssignPickerButton"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/assignmentNameTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,7 +64,7 @@ public class Home extends AppCompatActivity {
 
     public void onClickSemester(View view) {
         TextView myTextView = (TextView) findViewById(R.id.semesterListTxt);
-        myTextView.setText("Semester List");
+        myTextView.setText("Semesters");
         Button mainAddButton = (Button) findViewById(R.id.mainAddButton);
         mainAddButton.setText("Add A New Semester");
         RecyclerView recyclerView = findViewById(R.id.mainRecyclerView);
@@ -78,7 +78,7 @@ public class Home extends AppCompatActivity {
 
     public void onClickClasses(View view) {
         TextView myTextView = (TextView) findViewById(R.id.semesterListTxt);
-        myTextView.setText("Class List");
+        myTextView.setText("Classes");
         Button mainAddButton = (Button) findViewById(R.id.mainAddButton);
         mainAddButton.setText("Add A New Class");
 
@@ -93,7 +93,7 @@ public class Home extends AppCompatActivity {
 
     public void onClickAssign(View view) {
         TextView myTextView = (TextView) findViewById(R.id.semesterListTxt);
-        myTextView.setText("Assignment List");
+        myTextView.setText("Assignments");
         Button mainAddButton = (Button) findViewById(R.id.mainAddButton);
         mainAddButton.setText("Add A New Assignment");
 

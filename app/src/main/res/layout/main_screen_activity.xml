@@ -12,6 +12,7 @@
         android:layout_height="50dp"
         android:textAlignment="center"
         android:textColor="@color/greyBlue"
+        android:text="Semesters"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guidelineTop"

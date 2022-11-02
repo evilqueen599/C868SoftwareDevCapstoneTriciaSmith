@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SpinnerAdapter">
+        <item>Completed</item>
+        <item>Dropped</item>
+        <item>In Progress</item>
+        <item>Plan To Take</item>
+        <item>Retake</item>
+    </string-array>
+
+    <string-array name="assignmentSpinnerAdapter">
+        <item>Case Study/Case Analysis</item>
+        <item>Discussion Board</item>
+        <item>Group Work/Group Presentation</item>
+        <item>Lab Report</item>
+        <item>Literary Analysis</item>
+        <item>Objective Assessment</item>
+        <item>Oral Report</item>
+        <item>Other/Not Listed</item>
+        <item>Paper Exam</item>
+        <item>Personal Response Essay</item>
+        <item>Position Essay</item>
+        <item>Practice Assessment</item>
+        <item>Presentation</item>
+        <item>Problem-Solution Essay</item>
+        <item>Research Essay</item>
+        <item>Summary Essay</item>
+    </string-array></resources>

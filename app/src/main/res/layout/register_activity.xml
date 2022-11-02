@@ -99,7 +99,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:backgroundTint="@color/greyBlue"
-            android:enabled="false"
             android:text="@string/register"
             android:textColor="@color/black"
             android:textStyle="bold"

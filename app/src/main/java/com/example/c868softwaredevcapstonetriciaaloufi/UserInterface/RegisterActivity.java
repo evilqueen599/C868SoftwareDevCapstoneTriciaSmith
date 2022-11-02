@@ -40,9 +40,34 @@ public class RegisterActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
+                validator();
+                if (validator() == true) {
+                    Toast.makeText(RegisterActivity.this, "Registration Successful. Please Login.", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
             }
         });
+
+    }
+
+    public boolean validator() {
+        String firstname = firstName.getText().toString().trim();
+        String lastname = lastName.getText().toString().trim();
+        String email = regEmailAddress.getText().toString().trim();
+        String username = userName.getText().toString().trim();
+        String password = passWord.getText().toString().trim();
+        if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() ||username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Please enter all fields..", Toast.LENGTH_SHORT).show();
+            return false;
+        }else if (userId == -1) {
+            int newId = repository.getAllUsers().get(repository.getAllUsers().size() -1).getUserId() +1;
+            users = new Users(newId, firstname, lastname, email, username, password);
+            repository.insert(users);
+            return true;
+        }else {
+            Toast.makeText(RegisterActivity.this, "Registration error, please try again.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }

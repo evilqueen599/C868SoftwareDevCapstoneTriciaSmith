@@ -22,14 +22,12 @@ public class LoginActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     Button login;
-    ProgressBar loading;
     TextView attempts;
     int counter = 3;
 
     String user;
     String pass;
 
-    Users users;
     private UserDAO db;
 
     @Override
@@ -39,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
-        loading = findViewById(R.id.loading);
         attempts = findViewById(R.id.attempts);
 
         Database database = Room.databaseBuilder(this, Database.class, "myDatabase.db")
@@ -75,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
                 return true;
             } else if (username.getText().toString().equals(tempuser.getUserName()) && password.getText().toString().equals(tempuser.getPassword())) {
                 Toast.makeText(LoginActivity.this, "Sign in success", Toast.LENGTH_SHORT).show();
-                loading.isShown();
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 return true;

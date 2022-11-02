@@ -88,19 +88,18 @@
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/register"
+            app:layout_constraintBottom_toTopOf="@+id/registerBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/regUser" />
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:backgroundTint="@color/greyBlue"
             android:enabled="false"
-            android:onClick="registerClick"
             android:text="@string/register"
             android:textColor="@color/black"
             android:textStyle="bold"

@@ -13,38 +13,16 @@
         android:theme="@style/Theme.C868SoftwareDevCapstoneTriciaAloufi"
         tools:targetApi="31" >
         <receiver
-            android:name=".com.example.c868softwaredevcapstonetriciaaloufi.MyBroadcastReceiver"
+            android:name=".MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true"></receiver>
 
-        <activity
-            android:name=".UserInterface.AddAssignment"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.AddClass"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.AddSemester"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.AssignmentList"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.ClassList"
-            android:exported="false" />
-        <activity
-            android:name=".UserInterface.SemesterList"
-            android:exported="false" />
         <activity
             android:name=".UserInterface.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".UserInterface.RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".UserInterface.mainScreen"
-            android:exported="false"
-            android:parentActivityName=".UserInterface.MainActivity" />
         <activity
             android:name=".UserInterface.MainActivity"
             android:exported="true" >

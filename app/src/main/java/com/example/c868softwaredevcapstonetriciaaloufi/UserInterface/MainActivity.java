@@ -26,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
         repository.insert(user);
         Semesters semesters = new Semesters(1, "Test Data","08/09/2022", "12/25/2022");
         repository.insert(semesters);
+        Semesters semesters1 = new Semesters(2, "Semester","08/09/2022", "12/25/2022");
+        repository.insert(semesters1);
         Classes classes = new Classes(1, "Application Development", "Test Instructor",
-                "testemail@test.com", "954-778-9008", "InProgress","10/26/2022", "12/26/2022", "Finish this class ASAP", 1);
+                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", 1);
         repository.insert(classes);
+        Classes classes1 = new Classes(2, "Capstone Project", "Test Instructor",
+                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", -1);
+        repository.insert(classes1);
         Assignments assignments = new Assignments(1, "Final Project","10/26/2022", "11/28/2023", "Practice Assessment", 1);
         repository.insert(assignments);
     }

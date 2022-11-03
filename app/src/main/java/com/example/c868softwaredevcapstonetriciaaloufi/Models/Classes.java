@@ -142,6 +142,6 @@ public class Classes {
     }
 
     public void setSemesterId(int semesterId) {
-        semesterId = semesterId;
+        this.semesterId = semesterId;
     }
 }

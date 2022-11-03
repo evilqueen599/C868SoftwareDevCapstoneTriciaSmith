@@ -5,11 +5,11 @@
         android:title="Go Back to Home"
         android:orderInCategory="100"/>
     <item
-        android:id="@+id/SemesterStartAlert"
+        android:id="@+id/semesterStartAlert"
         android:title="Set Start Date Alert"
         android:orderInCategory="100"/>
     <item
-        android:id="@+id/SemesterEndAlert"
+        android:id="@+id/semesterEndAlert"
         android:title="Set End Date Alert"
         android:orderInCategory="100"/>
     <item

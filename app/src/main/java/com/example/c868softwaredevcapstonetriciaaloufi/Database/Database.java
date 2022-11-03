@@ -8,14 +8,16 @@ import androidx.room.RoomDatabase;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
+import com.example.c868softwaredevcapstonetriciaaloufi.Models.Teachers;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Users;
 
-@androidx.room.Database(entities = {Users.class, Semesters.class, Classes.class, Assignments.class}, version = 2, exportSchema = false)
+@androidx.room.Database(entities = {Users.class, Semesters.class, Classes.class, Assignments.class, Teachers.class}, version = 3, exportSchema = false)
 public abstract class Database extends RoomDatabase {
     public abstract UserDAO userDAO();
     public abstract SemesterDAO semesterDAO();
     public abstract ClassesDAO classesDAO();
     public abstract AssignmentDAO assignmentDAO();
+    public abstract TeacherDAO teacherDAO();
 
     private static volatile Database INSTANCE;
 

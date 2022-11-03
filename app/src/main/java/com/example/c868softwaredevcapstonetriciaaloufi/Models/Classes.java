@@ -36,6 +36,23 @@ public class Classes {
     @ColumnInfo
     private int semesterId;
 
+    @ColumnInfo
+    private int instructorId;
+
+    public Classes(int classId, String className, String instructorName, String instructorEmail, String instructorPhone, String courseStatus, String startDate, String endDate, String classNotes, int semesterId, int instructorId) {
+        this.classId = classId;
+        this.className = className;
+        this.instructorName = instructorName;
+        this.instructorEmail = instructorEmail;
+        this.instructorPhone = instructorPhone;
+        this.courseStatus = courseStatus;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.classNotes = classNotes;
+        this.semesterId = semesterId;
+        this.instructorId = instructorId;
+    }
+
     @Override
     public String toString() {
         return "Classes{" +
@@ -49,20 +66,8 @@ public class Classes {
                 ", endDate='" + endDate + '\'' +
                 ", classNotes='" + classNotes + '\'' +
                 ", semesterId=" + semesterId +
+                ", instructorId=" + instructorId +
                 '}';
-    }
-
-    public Classes(int classId, String className, String instructorName, String instructorEmail, String instructorPhone, String courseStatus, String startDate, String endDate, String classNotes, int semesterId) {
-        this.classId = classId;
-        this.className = className;
-        this.instructorName = instructorName;
-        this.instructorEmail = instructorEmail;
-        this.instructorPhone = instructorPhone;
-        this.courseStatus = courseStatus;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.classNotes = classNotes;
-        this.semesterId = semesterId;
     }
 
     public int getClassId() {
@@ -143,5 +148,13 @@ public class Classes {
 
     public void setSemesterId(int semesterId) {
         this.semesterId = semesterId;
+    }
+
+    public int getInstructorId() {
+        return instructorId;
+    }
+
+    public void setInstructorId(int instructorId) {
+        this.instructorId = instructorId;
     }
 }

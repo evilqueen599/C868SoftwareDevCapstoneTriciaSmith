@@ -10,7 +10,6 @@ import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
-import com.example.c868softwaredevcapstonetriciaaloufi.Models.Teachers;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Users;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 
@@ -30,15 +29,13 @@ public class MainActivity extends AppCompatActivity {
         Semesters semesters1 = new Semesters(2, "Semester","08/09/2022", "12/25/2022");
         repository.insert(semesters1);
         Classes classes = new Classes(1, "Application Development", "Test Instructor",
-                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", 1, 1);
+                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", 1);
         repository.insert(classes);
         Classes classes1 = new Classes(2, "Capstone Project", "Test Instructor",
-                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", -1, 1);
+                "testemail@test.com", "954-778-9008", "In Progress","10/26/2022", "12/26/2022", "Finish this class ASAP", -1);
         repository.insert(classes1);
         Assignments assignments = new Assignments(1, "Final Project","10/26/2022", "11/28/2023", "Practice Assessment", 1);
         repository.insert(assignments);
-        Teachers teachers = new Teachers(1,"Great Zamboni", "810-123-1234", "test1@gmail.com");
-        repository.insert(teachers);
     }
     public void enterButton(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);

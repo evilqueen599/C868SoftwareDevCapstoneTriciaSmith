@@ -211,7 +211,7 @@ public class AddSemester extends AppCompatActivity {
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Add Course A Class To This Semester");
+        builder.setTitle("Add A Class To This Semester");
         builder.setMessage("Do you want to select an existing class to add to this semester or create a new class for this semester?");
         builder.setIcon(R.drawable.ic_add_button);
         builder.setPositiveButton("New Class", (dialog, id) -> {

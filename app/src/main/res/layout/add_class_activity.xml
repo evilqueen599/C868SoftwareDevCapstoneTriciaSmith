@@ -9,7 +9,7 @@ android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".UserInterface.AddCourse">
+    tools:context=".UserInterface.AddClass">
 
     <EditText
         android:id="@+id/classTitleTxt"
@@ -20,7 +20,7 @@ android:layout_height="match_parent">
         android:inputType="textShortMessage"
         android:minHeight="48dp"
         android:textAlignment="center"
-        android:textColorHint="#757575"
+        android:textColorHint="@color/darkBlue"
         app:layout_constraintBottom_toTopOf="@+id/classInstructorTxt"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
@@ -35,7 +35,7 @@ android:layout_height="match_parent">
         android:inputType="textShortMessage"
         android:minHeight="48dp"
         android:textAlignment="center"
-        android:textColorHint="#757575"
+        android:textColorHint="@color/greyBlue"
         app:layout_constraintBottom_toTopOf="@+id/addAssignmentsBtn"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
@@ -43,42 +43,35 @@ android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/classInstructorTxt"
-        android:layout_width="319dp"
-        android:layout_height="51dp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter Instructor Name"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
         android:textAlignment="center"
-        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/instructorEmailAddressTxt"
-        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
-        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/classTitleTxt" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/classTitleTxt" />
 
     <TextView
         android:id="@+id/addClassTxt"
-        android:layout_width="322dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:focusedByDefault="true"
         android:text="Add A New Class"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintBottom_toTopOf="@+id/classTitleTxt"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
-        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/classCardView"
-        android:layout_width="409dp"
-        android:layout_height="660dp"
+        android:layout_width="0dp"
+        android:layout_height="600dp"
         app:cardBackgroundColor="@color/lighterblue"
         app:cardCornerRadius="30dp"
         app:cardElevation="10dp"
@@ -107,8 +100,8 @@ android:layout_height="match_parent">
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toEndOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineTop"
-        app:layout_constraintVertical_bias="0.992" />
+        app:layout_constraintTop_toBottomOf="@+id/classCardView"
+         />
 
     <TextView
         android:id="@+id/startDate"
@@ -194,18 +187,14 @@ android:layout_height="match_parent">
         android:id="@+id/classStatusBar"
         android:layout_width="279dp"
         android:layout_height="48dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="54dp"
-        android:backgroundTint="#673AB7"
+        android:backgroundTint="@color/greyBlue"
         android:dropDownWidth="wrap_content"
         android:entries="@array/SpinnerAdapter"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintBottom_toTopOf="@+id/startDate"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineTop"
+        app:layout_constraintTop_toBottomOf="@+id/instructorPhoneTxt"
         app:layout_constraintVertical_bias="0.401" />
 
     <EditText

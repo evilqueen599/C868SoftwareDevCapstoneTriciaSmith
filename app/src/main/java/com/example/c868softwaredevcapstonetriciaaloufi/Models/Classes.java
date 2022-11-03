@@ -36,10 +36,7 @@ public class Classes {
     @ColumnInfo
     private int semesterId;
 
-    @ColumnInfo
-    private int instructorId;
-
-    public Classes(int classId, String className, String instructorName, String instructorEmail, String instructorPhone, String courseStatus, String startDate, String endDate, String classNotes, int semesterId, int instructorId) {
+    public Classes(int classId, String className, String instructorName, String instructorEmail, String instructorPhone, String courseStatus, String startDate, String endDate, String classNotes, int semesterId) {
         this.classId = classId;
         this.className = className;
         this.instructorName = instructorName;
@@ -50,7 +47,6 @@ public class Classes {
         this.endDate = endDate;
         this.classNotes = classNotes;
         this.semesterId = semesterId;
-        this.instructorId = instructorId;
     }
 
     @Override
@@ -66,7 +62,6 @@ public class Classes {
                 ", endDate='" + endDate + '\'' +
                 ", classNotes='" + classNotes + '\'' +
                 ", semesterId=" + semesterId +
-                ", instructorId=" + instructorId +
                 '}';
     }
 
@@ -150,11 +145,4 @@ public class Classes {
         this.semesterId = semesterId;
     }
 
-    public int getInstructorId() {
-        return instructorId;
-    }
-
-    public void setInstructorId(int instructorId) {
-        this.instructorId = instructorId;
-    }
 }

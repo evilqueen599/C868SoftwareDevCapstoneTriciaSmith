@@ -5,7 +5,6 @@ import android.app.Application;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
-import com.example.c868softwaredevcapstonetriciaaloufi.Models.Teachers;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Users;
 
 import java.util.List;
@@ -17,13 +16,11 @@ private UserDAO mUserDAO;
 private SemesterDAO mSemesterDAO;
 private ClassesDAO mClassesDAO;
 private AssignmentDAO mAssignmentsDAO;
-private TeacherDAO mTeacherDAO;
 
 private List<Users> mAllUsers;
 private List<Semesters> mAllSemesters;
 private List<Classes> mAllClasses;
 private List<Assignments> mAllAssignments;
-private List<Teachers> mAllTeachers;
 
 
 private static int NUMBER_OF_THREADS = 12;
@@ -35,7 +32,6 @@ public Repository(Application application) {
     mSemesterDAO = db.semesterDAO();
     mClassesDAO = db.classesDAO();
     mAssignmentsDAO = db.assignmentDAO();
-    mTeacherDAO = db.teacherDAO();
 }
 //Users//
 public List<Users> getAllUsers() {
@@ -214,47 +210,4 @@ public List<Users> getAllUsers() {
         }
     }
 
-    //teachers//
-    public List<Teachers> getAllTeachers() {
-        databaseExecutor.execute(() -> {
-            mAllTeachers = mTeacherDAO.getAllTeachers();
-        });
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e) {
-            e.printStackTrace();
-        }return mAllTeachers;
-    }
-    public void insert(Teachers teachers) {
-        databaseExecutor.execute(() -> {
-            mTeacherDAO.insert(teachers);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void update(Teachers teachers) {
-        databaseExecutor.execute(() -> {
-            mTeacherDAO.update(teachers);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void delete(Teachers teachers) {
-        databaseExecutor.execute(() -> {
-            mTeacherDAO.delete(teachers);
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }

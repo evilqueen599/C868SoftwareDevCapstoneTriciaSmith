@@ -66,7 +66,7 @@ public class AddAssignment extends AppCompatActivity {
         editAssignmentType = getIntent().getStringExtra("assignmentType");
         editStartDate = getIntent().getStringExtra("startDate");
         editEndDate = getIntent().getStringExtra("endDate");
-        editClassId = getIntent().getIntExtra("classeId", -1);
+        editClassId = getIntent().getIntExtra("classId", -1);
         if (assignmentId == -1) {
             setUpView();
         } else {
@@ -166,6 +166,7 @@ public class AddAssignment extends AppCompatActivity {
                 return true;
 
             case R.id.assign_start_date_notification:
+                if(assignmentId != -1) {
                 editStartDate = startAssignPickerBtn.getText().toString();
                 Date mStart = null;
                 try {
@@ -180,10 +181,14 @@ public class AddAssignment extends AppCompatActivity {
                 AlarmManager alarmManager1=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager1.set(AlarmManager.RTC_WAKEUP,startTrigger,startSender);
                 Toast.makeText(AddAssignment.this, "Assignment start date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(AddAssignment.this, "Cannot create an alert for an assignment that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
 
 
             case R.id.assign_due_date_notification:
+                if(assignmentId != -1) {
                 editEndDate = endAssignPickerBtn.getText().toString();
                 Date mEnd = null;
                 try {
@@ -198,7 +203,21 @@ public class AddAssignment extends AppCompatActivity {
                 AlarmManager alarmManager2=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager2.set(AlarmManager.RTC_WAKEUP,endTrigger,endSender);
                 Toast.makeText(AddAssignment.this, "Assignment due date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(AddAssignment.this, "Cannot create an alert for an assignment that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
+
+            case R.id.deleteAssignment:
+                if (assignmentId != -1) {
+                    Assignments deleteAssignment = new Assignments(assignmentId, editAssignmentName, editStartDate, editEndDate, editAssignmentType, editClassId);
+                    Toast.makeText(AddAssignment.this, "Assignment deleted", Toast.LENGTH_SHORT).show();
+                    repository.delete(deleteAssignment);
+                    Intent intent1 = new Intent(AddAssignment.this, Home.class);
+                    startActivity(intent1);
+                }else {
+                    Toast.makeText(AddAssignment.this, "Cannot delete an assignment that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
         }
         return super.onOptionsItemSelected(menuItem);
     }

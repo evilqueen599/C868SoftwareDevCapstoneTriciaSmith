@@ -371,6 +371,7 @@ public class AddClass extends AppCompatActivity {
                 return true;
 
             case R.id.startDateAlert:
+                if(classId != -1) {
                 editStartDate = startDateButton.getText().toString();
                 Date mStart = null;
                 try {
@@ -385,10 +386,14 @@ public class AddClass extends AppCompatActivity {
                 AlarmManager alarmManager1=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager1.set(AlarmManager.RTC_WAKEUP,startTrigger,startSender);
                 Toast.makeText(AddClass.this, "Class start date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                Toast.makeText(AddClass.this, "Cannot create an alert for a class that doesn't exist.", Toast.LENGTH_SHORT).show();
+                 }
                 return true;
 
 
             case R.id.endDateAlert:
+                if (classId != -1) {
                 editEndDate = endDateButton.getText().toString();
                 Date mEnd = null;
                 try {
@@ -403,9 +408,13 @@ public class AddClass extends AppCompatActivity {
                 AlarmManager alarmManager2=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager2.set(AlarmManager.RTC_WAKEUP,endTrigger,endSender);
                 Toast.makeText(AddClass.this, "Class due date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(AddClass.this, "Cannot create an alert for a class that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
 
             case R.id.shareClassNotes:
+                if (classId != -1) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, (classNoteTxt.getText().toString()));
@@ -413,6 +422,9 @@ public class AddClass extends AppCompatActivity {
                 sendIntent.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
+                }else {
+                    Toast.makeText(AddClass.this, "Cannot share a note for a class that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
 
             case R.id.deleteClass:

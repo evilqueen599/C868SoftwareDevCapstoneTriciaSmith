@@ -273,6 +273,7 @@ public class AddSemester extends AppCompatActivity {
                 return true;
 
             case R.id.semesterStartAlert:
+                if (semesterId != -1) {
                 editStartDate = startDatePickerButton.getText().toString();
                 Date mStart = null;
                 try {
@@ -287,10 +288,14 @@ public class AddSemester extends AppCompatActivity {
                 AlarmManager alarmManager1 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager1.set(AlarmManager.RTC_WAKEUP, startTrigger, startSender);
                 Toast.makeText(AddSemester.this, "Semester start date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(AddSemester.this, "Cannot create an alert for a semester that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
 
 
             case R.id.semesterEndAlert:
+                if (semesterId != -1) {
                 editEndDate = endDatePickerButton.getText().toString();
                 Date mEnd = null;
                 try {
@@ -305,6 +310,9 @@ public class AddSemester extends AppCompatActivity {
                 AlarmManager alarmManager2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager2.set(AlarmManager.RTC_WAKEUP, endTrigger, endSender);
                 Toast.makeText(AddSemester.this, "Semester end date notification enabled.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(AddSemester.this, "Cannot create an alert for a semester that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
                 return true;
 
             case R.id.deleteSemester:

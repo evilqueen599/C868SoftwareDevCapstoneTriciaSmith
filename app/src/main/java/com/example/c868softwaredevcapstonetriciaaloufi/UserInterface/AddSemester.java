@@ -100,6 +100,7 @@ public class AddSemester extends AppCompatActivity {
         startDatePickerButton.setText(getEndDate());
         initDatePicker();
         initEndDatePicker();
+        addClassesButton.hide();
         endDatePickerButton = findViewById(R.id.endDatePickerButton);
         endDatePickerButton.setText(getTodaysDate());
         addSemester();
@@ -115,51 +116,51 @@ public class AddSemester extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         assocClasses = repository.getAllClasses();
         classesInSemester = new ArrayList<>();
-        for (Classes classes : assocClasses) {
-            if (classes.getSemesterId() == semesterId) {
-                classesInSemester.add(classes);
-            }
-        }
-        classAdapter.setClasses(classesInSemester);
-
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                try {
-                    DialogInterface.OnClickListener classDeleteClickListener = new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            switch (which) {
-                                case DialogInterface.BUTTON_POSITIVE:
-                                    Classes classes = classAdapter.getClass(viewHolder.getAdapterPosition());
-                                    classesInSemester.remove(classes);
-                                    classAdapter.notifyItemRemoved(which);
-                                    classAdapter.setClasses(classesInSemester);
-                                    overWriteClass(classes, -1);
-                                    Toast.makeText(AddSemester.this, "Class has been removed from semester.", Toast.LENGTH_SHORT).show();
-                                    break;
-
-                                case DialogInterface.BUTTON_NEGATIVE:
-                                    classAdapter.notifyDataSetChanged();
-                                    classAdapter.setClasses(classesInSemester);
-                                    Toast.makeText(AddSemester.this, "Class has not been removed from semester.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    };
-                    androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(AddSemester.this);
-                    alert.setMessage("Do you want to remove this class from this semester?").setPositiveButton("Yes", classDeleteClickListener)
-                            .setNegativeButton("No", classDeleteClickListener).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
+            for (Classes classes : assocClasses) {
+                if (classes.getSemesterId() == semesterId) {
+                    classesInSemester.add(classes);
                 }
             }
-        }).attachToRecyclerView(recyclerView);
-    }
+            classAdapter.setClasses(classesInSemester);
+
+            new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                @Override
+                public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                    return false;
+                }
+
+                @Override
+                public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                    try {
+                        DialogInterface.OnClickListener classDeleteClickListener = new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which) {
+                                    case DialogInterface.BUTTON_POSITIVE:
+                                        Classes classes = classAdapter.getClass(viewHolder.getAdapterPosition());
+                                        classesInSemester.remove(classes);
+                                        classAdapter.notifyItemRemoved(which);
+                                        classAdapter.setClasses(classesInSemester);
+                                        overWriteClass(classes, -1);
+                                        Toast.makeText(AddSemester.this, "Class has been removed from semester.", Toast.LENGTH_SHORT).show();
+                                        break;
+
+                                    case DialogInterface.BUTTON_NEGATIVE:
+                                        classAdapter.notifyDataSetChanged();
+                                        classAdapter.setClasses(classesInSemester);
+                                        Toast.makeText(AddSemester.this, "Class has not been removed from semester.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        };
+                        androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(AddSemester.this);
+                        alert.setMessage("Do you want to remove this class from this semester?").setPositiveButton("Yes", classDeleteClickListener)
+                                .setNegativeButton("No", classDeleteClickListener).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).attachToRecyclerView(recyclerView);
+        }
 
     private void addSemester() {
         createBtn = findViewById(R.id.createBtn);
@@ -276,15 +277,15 @@ public class AddSemester extends AppCompatActivity {
                 Date mStart = null;
                 try {
                     mStart = formatter.parse(editStartDate);
-                }catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 Long startTrigger = mStart.getTime();
-                Intent addTermIntent=new Intent(AddSemester.this, MyBroadcastReceiver.class);
-                addTermIntent.putExtra("key","The Semester " + getIntent().getStringExtra("semesterName") + " starts today " + getIntent().getStringExtra("startDate"));
-                PendingIntent startSender=PendingIntent.getBroadcast(AddSemester .this, (1240000 + semesterId),addTermIntent,PendingIntent.FLAG_IMMUTABLE);
-                AlarmManager alarmManager1=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                alarmManager1.set(AlarmManager.RTC_WAKEUP,startTrigger,startSender);
+                Intent addTermIntent = new Intent(AddSemester.this, MyBroadcastReceiver.class);
+                addTermIntent.putExtra("key", "The Semester " + getIntent().getStringExtra("semesterName") + " starts today " + getIntent().getStringExtra("startDate"));
+                PendingIntent startSender = PendingIntent.getBroadcast(AddSemester.this, (1240000 + semesterId), addTermIntent, PendingIntent.FLAG_IMMUTABLE);
+                AlarmManager alarmManager1 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                alarmManager1.set(AlarmManager.RTC_WAKEUP, startTrigger, startSender);
                 Toast.makeText(AddSemester.this, "Semester start date notification enabled.", Toast.LENGTH_SHORT).show();
                 return true;
 
@@ -294,26 +295,42 @@ public class AddSemester extends AppCompatActivity {
                 Date mEnd = null;
                 try {
                     mEnd = formatter.parse(editEndDate);
-                }catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 Long endTrigger = mEnd.getTime();
-                Intent endTermIntent=new Intent(AddSemester.this, MyBroadcastReceiver.class);
-                endTermIntent.putExtra("key","The Semester " + getIntent().getStringExtra("semesterName") + " finishes today!");
-                PendingIntent endSender=PendingIntent.getBroadcast(AddSemester .this,(1250000 + semesterId),endTermIntent,PendingIntent.FLAG_IMMUTABLE);
-                AlarmManager alarmManager2=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                alarmManager2.set(AlarmManager.RTC_WAKEUP,endTrigger,endSender);
+                Intent endTermIntent = new Intent(AddSemester.this, MyBroadcastReceiver.class);
+                endTermIntent.putExtra("key", "The Semester " + getIntent().getStringExtra("semesterName") + " finishes today!");
+                PendingIntent endSender = PendingIntent.getBroadcast(AddSemester.this, (1250000 + semesterId), endTermIntent, PendingIntent.FLAG_IMMUTABLE);
+                AlarmManager alarmManager2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                alarmManager2.set(AlarmManager.RTC_WAKEUP, endTrigger, endSender);
                 Toast.makeText(AddSemester.this, "Semester end date notification enabled.", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.refreshPage:
-                Intent intent3 = new Intent(AddSemester.this, AddSemester.class);
-                startActivity(intent3);
-                return true;
+            case R.id.deleteSemester:
+                if (semesterId != -1) {
+                    checkForClassesInThisSemester();
+                }else {
+                    Toast.makeText(AddSemester.this, "Cannot delete a semester that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
         }
-
-        return super.onOptionsItemSelected(menuItem);
+        return false;
     }
+
+    private boolean checkForClassesInThisSemester() {
+        Semesters deleteSemester = new Semesters(semesterId, editSemesterTitle, editStartDate, editEndDate);
+        if(classesInSemester.size() >= 1) {
+            Toast.makeText(AddSemester.this, "Cannot delete semester with classes assigned.", Toast.LENGTH_SHORT).show();
+            return true;
+        }else {
+            Toast.makeText(AddSemester.this, "Deleted semester", Toast.LENGTH_SHORT).show();
+            repository.delete(deleteSemester);
+            Intent intent = new Intent(AddSemester.this, Home.class);
+            startActivity(intent);
+            return false;
+        }
+    }
+
     private String getTodaysDate() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);

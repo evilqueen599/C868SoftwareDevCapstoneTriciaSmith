@@ -1,14 +1,19 @@
 package com.example.c868softwaredevcapstonetriciaaloufi.UserInterface;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,13 +54,13 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (semesterRad.isChecked()) {
-                    Intent intent = new Intent(Home.this,AddSemester.class);
+                    Intent intent = new Intent(Home.this, AddSemester.class);
                     startActivity(intent);
                 } else if (classRad.isChecked()) {
                     Intent intent = new Intent(Home.this, AddClass.class);
                     startActivity(intent);
                 } else if (assignRad.isChecked()) {
-                    Intent intent = new Intent(Home.this,AddAssignment.class);
+                    Intent intent = new Intent(Home.this, AddAssignment.class);
                     startActivity(intent);
                 }
             }
@@ -106,3 +111,4 @@ public class Home extends AppCompatActivity {
         assignmentAdapter.setAssignments(assignments);
     }
 }
+

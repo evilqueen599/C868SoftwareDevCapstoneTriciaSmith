@@ -18,8 +18,8 @@ import java.util.List;
 
 public class SemesterAdapter extends RecyclerView.Adapter<SemesterAdapter.SemesterViewHolder> {
 
-    public Semesters getSemester(int absoluteAdapterPosition) {
-        return mSemesters.get(absoluteAdapterPosition);
+    public Semesters getSemester(int AdapterPosition) {
+        return mSemesters.get(AdapterPosition);
     }
 
     public void setSemesters(List<Semesters> semesters) {
@@ -85,7 +85,7 @@ public class SemesterAdapter extends RecyclerView.Adapter<SemesterAdapter.Semest
             holder.termTxt3.setText("End Date: " + endDate);
 
         } else {
-            holder.semesterTxt.setText("No Terms Exist");
+            holder.semesterTxt.setText("No Semesters Exist");
         }
     }
 

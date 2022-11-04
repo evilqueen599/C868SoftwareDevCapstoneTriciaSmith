@@ -29,6 +29,7 @@ import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.ClassAssignmentA
 import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
+import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
 import com.example.c868softwaredevcapstonetriciaaloufi.MyBroadcastReceiver;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -174,6 +175,7 @@ public class AddClass extends AppCompatActivity {
     private void setUpView() {
         initDatePicker();
         initEndDatePicker();
+        addAssignmentsBtn.hide();
         startDateButton = findViewById(R.id.startDateButton);
         startDateButton.setText(getTodaysDate());
         endDateButton = findViewById(R.id.endDateButton);
@@ -413,12 +415,28 @@ public class AddClass extends AppCompatActivity {
                 startActivity(shareIntent);
                 return true;
 
-            case R.id.refreshPage:
-                Intent intent3 = new Intent(AddClass.this, AddClass.class);
-                startActivity(intent3);
-                return true;
+            case R.id.deleteClass:
+                if (classId != -1) {
+                    checkForAssignmentsInThisClass();
+                }else {
+                    Toast.makeText(AddClass.this, "Cannot delete a class that doesn't exist.", Toast.LENGTH_SHORT).show();
+                }
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    private boolean checkForAssignmentsInThisClass() {
+        Classes deleteClass = new Classes(classId, editClassTitleTxt, editInstructorTxt, editInstructorEmailTxt, editInstructorPhoneTxt, editClassStatus, editStartDate, editEndDate, editClassNoteTxt, editSemesterId);
+        if(assessInCourse.size() >= 1) {
+            Toast.makeText(AddClass.this, "Cannot delete class with assignments assigned.", Toast.LENGTH_SHORT).show();
+            return true;
+        }else {
+            Toast.makeText(AddClass.this, "Deleted class", Toast.LENGTH_SHORT).show();
+            repository.delete(deleteClass);
+            Intent intent = new Intent(AddClass.this, Home.class);
+            startActivity(intent);
+            return false;
+        }
     }
 
     private String getTodaysDate() {

@@ -314,7 +314,7 @@ public class AddSemester extends AppCompatActivity {
                     Toast.makeText(AddSemester.this, "Cannot delete a semester that doesn't exist.", Toast.LENGTH_SHORT).show();
                 }
         }
-        return false;
+        return super.onOptionsItemSelected(menuItem);
     }
 
     private boolean checkForClassesInThisSemester() {

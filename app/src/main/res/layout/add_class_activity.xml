@@ -71,7 +71,7 @@ android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
         android:id="@+id/classCardView"
         android:layout_width="0dp"
-        android:layout_height="600dp"
+        android:layout_height="450dp"
         app:cardBackgroundColor="@color/lighterblue"
         app:cardCornerRadius="30dp"
         app:cardElevation="10dp"
@@ -88,6 +88,15 @@ android:layout_height="match_parent">
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <TextView
+            android:id="@+id/instructionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swipe to remove assignments"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            />
     </androidx.cardview.widget.CardView>
 
     <Button

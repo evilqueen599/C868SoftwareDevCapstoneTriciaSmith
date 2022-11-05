@@ -160,7 +160,10 @@ public class Home extends AppCompatActivity {
                     searchAssign = repository.getAllAssignments();
                     filteredAssignments = new ArrayList<>();
                     for (Assignments assignments : searchAssign) {
-                        if (assignments.getAssignmentTitle().toLowerCase().contains(newText.toLowerCase().trim())) {
+                        if (assignments.getAssignmentTitle().toLowerCase().contains(newText.toLowerCase().trim()) ||
+                                assignments.getAssignmentType().toLowerCase().contains(newText.toLowerCase().trim()) ||
+                                assignments.getStartDate().contains(newText.trim()) ||
+                                assignments.getEndDate().contains(newText.trim())) {
                             filteredAssignments.add(assignments);
                         }
                         AssignmentAdapter assignAdapter = new AssignmentAdapter(Home.this);
@@ -172,7 +175,11 @@ public class Home extends AppCompatActivity {
                     searchClasses = repository.getAllClasses();
                     filteredClasses = new ArrayList<>();
                     for (Classes classes : searchClasses) {
-                        if (classes.getClassName().toLowerCase().contains(newText.toLowerCase().trim())) {
+                        if (classes.getClassName().toLowerCase().contains(newText.toLowerCase().trim()) || classes.getStartDate().contains(newText.trim()) ||
+                                classes.getEndDate().contains(newText.trim()) || classes.getCourseStatus().toLowerCase().contains(newText.toLowerCase().trim()) ||
+                                classes.getInstructorName().toLowerCase().contains(newText.toLowerCase().trim()) ||
+                                classes.getInstructorPhone().contains(newText.trim()) ||
+                                classes.getInstructorEmail().toLowerCase().contains(newText.toLowerCase().trim())) {
                             filteredClasses.add(classes);
                         }
                         ClassAdapter classAdapter = new ClassAdapter(Home.this);
@@ -185,7 +192,7 @@ public class Home extends AppCompatActivity {
                     searchSemester = repository.getAllSemesters();
                     filterSemesters = new ArrayList<>();
                     for (Semesters semesters : searchSemester) {
-                        if (semesters.getSemesterName().toLowerCase().contains(newText.toLowerCase().trim())) {
+                        if (semesters.getSemesterName().toLowerCase().contains(newText.toLowerCase().trim()) || semesters.getStartDate().contains(newText.trim()) || semesters.getEndDate().contains(newText.trim())) {
                             filterSemesters.add(semesters);
                         }
                         SemesterAdapter semesterAdapter = new SemesterAdapter(Home.this);

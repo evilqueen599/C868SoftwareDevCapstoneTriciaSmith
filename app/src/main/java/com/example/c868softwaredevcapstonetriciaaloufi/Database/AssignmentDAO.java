@@ -24,4 +24,5 @@ public interface AssignmentDAO {
 
     @Query("SELECT * FROM assignments ORDER BY assignmentId ASC")
     List<Assignments> getAllAssignments();
+
 }

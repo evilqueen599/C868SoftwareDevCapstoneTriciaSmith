@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,17 +16,16 @@ import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 import com.example.c868softwaredevcapstonetriciaaloufi.UserInterface.AddAssignment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.AssignmentViewHolder> {
-    public Assignments getAssignments(int absoluteAdapterPosition) {
-        return mAssignments.get(absoluteAdapterPosition);
-    }
-
     public void setAssignments(List<Assignments> assignments) {
         mAssignments = assignments;
         notifyDataSetChanged();
     }
+
+
 
     class AssignmentViewHolder extends RecyclerView.ViewHolder {
         private final TextView assignmentTitleTxt;
@@ -59,6 +60,7 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.As
     }
 
     private List<Assignments> mAssignments;
+    private  List<Assignments> search;
     private final Context context;
     private final LayoutInflater mInflator;
 

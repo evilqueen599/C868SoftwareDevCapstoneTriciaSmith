@@ -13,6 +13,9 @@ import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Users;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
     EditText firstName;
     EditText lastName;
@@ -42,7 +45,15 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 validator();
                 if (validator() == true) {
-                    Toast.makeText(RegisterActivity.this, "Registration Successful. Please Login.", Toast.LENGTH_LONG).show();
+                    String firstname = firstName.getText().toString().trim();
+                    String lastname = lastName.getText().toString().trim();
+                    String email = regEmailAddress.getText().toString().trim();
+                    String username = userName.getText().toString().trim();
+                    String password = passWord.getText().toString().trim();
+                    int newId = repository.getAllUsers().get(repository.getAllUsers().size() - 1).getUserId() + 1;
+                    users = new Users(newId, firstname, lastname, email, username, password);
+                    repository.insert(users);
+                    Toast.makeText(RegisterActivity.this, "Registration Successful Please Login", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -54,20 +65,20 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean validator() {
         String firstname = firstName.getText().toString().trim();
         String lastname = lastName.getText().toString().trim();
+        Pattern pattern = Pattern.compile(".*" + "@" + "." + ".*");
+        Matcher matcher = pattern.matcher(regEmailAddress.getText().toString());
         String email = regEmailAddress.getText().toString().trim();
         String username = userName.getText().toString().trim();
         String password = passWord.getText().toString().trim();
-        if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() ||username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(RegisterActivity.this, "Please enter all fields..", Toast.LENGTH_SHORT).show();
+        if (firstname.isEmpty() || lastname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
             return false;
-        }else if (userId == -1) {
-            int newId = repository.getAllUsers().get(repository.getAllUsers().size() -1).getUserId() +1;
-            users = new Users(newId, firstname, lastname, email, username, password);
-            repository.insert(users);
+        } else if (!matcher.find()) {
+            Toast.makeText(RegisterActivity.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (userId == -1) {
             return true;
-        }else {
-            Toast.makeText(RegisterActivity.this, "Registration error, please try again.", Toast.LENGTH_SHORT).show();
-            return false;
         }
+        return false;
     }
 }

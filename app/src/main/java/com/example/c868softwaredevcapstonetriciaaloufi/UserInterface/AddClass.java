@@ -40,6 +40,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AddClass extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
@@ -256,11 +258,14 @@ public class AddClass extends AppCompatActivity {
             startDate = startDateButton.getText().toString();
             endDate = endDateButton.getText().toString();
             classNote = classNoteTxt.getText().toString();
+            Pattern pattern = Pattern.compile(".*"+"@"+"."+".*");
+            Matcher matcher = pattern.matcher(instructorEmailAddressTxt.getText().toString());
 
             if (isNull()) {
                 return;
-            }
-            if (classId == -1) {
+            }else if (!matcher.find()){
+                Toast.makeText(AddClass.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+            }else if (classId == -1) {
                 int newCourseId = repository.getAllClasses().get(repository.getAllClasses().size() - 1).getClassId() +1;
                 classes = new Classes(newCourseId, className, instructorName, instructorEmail, instructorPhone, classStatus, startDate, endDate, classNote, editSemesterId);
                 repository.insert(classes);

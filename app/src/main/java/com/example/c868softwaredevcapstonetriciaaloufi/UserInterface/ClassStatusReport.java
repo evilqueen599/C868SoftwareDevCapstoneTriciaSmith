@@ -1,6 +1,9 @@
 package com.example.c868softwaredevcapstonetriciaaloufi.UserInterface;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -82,5 +85,23 @@ public class ClassStatusReport extends AppCompatActivity {
            }
        });
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.class_report_menu, menu);
+        return true;
+    }
 
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            case R.id.home:
+                Intent intent = new Intent(ClassStatusReport.this, Home.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
 }

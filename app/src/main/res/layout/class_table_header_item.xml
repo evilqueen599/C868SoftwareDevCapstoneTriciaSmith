@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@+id/table"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    android:shrinkColumns="7-1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <View
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="#c0c0c0"/>
+    <TableRow
+        android:background="@drawable/shape_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id = "@+id/titleTv"
+            android:text="Class Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:id="@+id/startTv"
+            android:text="Start Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:id="@+id/endTv"
+            android:text="End Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+
+        <TextView
+            android:id="@+id/statusTv"
+            android:text="Class Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+
+        <TextView
+            android:id="@+id/instructTv"
+            android:text="Instructor Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:id="@+id/phoneTv"
+            android:text="Instructor Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="6"
+            android:background="@drawable/shape_table"
+            />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:id="@+id/emailTv"
+            android:text="Instructor Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="7"
+            android:background="@drawable/shape_table"
+            />
+    </TableRow>
+    <View
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="#c0c0c0"/>
+</TableLayout>

@@ -41,9 +41,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends AppCompatActivity {
-    Assignments assignments;
-    Classes classes;
-    Semesters semesters;
     RecyclerView recyclerView;
     Repository repository;
 

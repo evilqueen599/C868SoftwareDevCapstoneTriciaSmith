@@ -1,6 +1,7 @@
 package com.example.c868softwaredevcapstonetriciaaloufi.Database;
 
 import androidx.room.Dao;
+import androidx.room.DatabaseView;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -24,5 +25,4 @@ public interface AssignmentDAO {
 
     @Query("SELECT * FROM assignments ORDER BY assignmentId ASC")
     List<Assignments> getAllAssignments();
-
 }

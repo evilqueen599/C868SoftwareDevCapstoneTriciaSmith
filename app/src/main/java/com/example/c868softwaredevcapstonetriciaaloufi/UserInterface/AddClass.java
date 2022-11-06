@@ -427,6 +427,11 @@ public class AddClass extends AppCompatActivity {
                 }
                 return true;
 
+            case R.id.generateClassReport:
+                Intent intent1 = new Intent(AddClass.this, ClassStatusReport.class);
+                startActivity(intent1);
+                return true;
+
             case R.id.deleteClass:
                 if (classId != -1) {
                     checkForAssignmentsInThisClass();

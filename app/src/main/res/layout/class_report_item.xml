@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TableRow
+            android:background="@drawable/shape_table">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"/>
+            <TextView
+                android:id="@+id/classReportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Class Name"
+                />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+            <TextView
+                android:id="@+id/classReportStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Start Date" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+            <TextView
+                android:id="@+id/classReportEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="End Date" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+
+            <TextView
+                android:id="@+id/classReportClassStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Class Status" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+
+            <TextView
+                android:id="@+id/classReportInstructorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Instructor Name" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+            <TextView
+                android:id="@+id/classReportInstructorPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Instructor Phone" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"/>
+            <TextView
+                android:id="@+id/classReportInstructorEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_table"
+                android:text="Instructor Email" />
+        </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+</TableLayout>

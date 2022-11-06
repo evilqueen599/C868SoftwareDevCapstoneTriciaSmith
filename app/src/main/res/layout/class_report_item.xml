@@ -99,5 +99,4 @@ android:stretchColumns="*">
     android:layout_height="2dp"
     android:layout_width="match_parent"
     android:background="#c0c0c0"/>
-
 </TableLayout>

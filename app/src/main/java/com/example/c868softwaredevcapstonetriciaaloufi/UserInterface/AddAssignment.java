@@ -208,6 +208,11 @@ public class AddAssignment extends AppCompatActivity {
                 }
                 return true;
 
+            case R.id.assign_by_type_report:
+                Intent intent2 = new Intent(AddAssignment.this, AssignmentTypeReport.class);
+                startActivity(intent2);
+                return true;
+
             case R.id.deleteAssignment:
                 if (assignmentId != -1) {
                     Assignments deleteAssignment = new Assignments(assignmentId, editAssignmentName, editStartDate, editEndDate, editAssignmentType, editClassId);

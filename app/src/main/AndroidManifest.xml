@@ -39,6 +39,9 @@
             android:name=".UserInterface.ClassStatusReport"
             android:exported="false" />
         <activity
+            android:name=".UserInterface.AssignmentTypeReport"
+            android:exported="false" />
+        <activity
             android:name=".UserInterface.MainActivity"
             android:exported="true" >
             <intent-filter>

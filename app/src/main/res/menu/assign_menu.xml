@@ -13,6 +13,10 @@
         android:title="Set Due Date Reminder"
         android:orderInCategory="100"/>
     <item
+        android:id="@+id/assign_by_type_report"
+        android:title="Assignment Type Report"
+        android:orderInCategory="100"/>
+    <item
         android:id="@+id/deleteAssignment"
         android:title="Delete This Assignment"
         android:orderInCategory="100"/>

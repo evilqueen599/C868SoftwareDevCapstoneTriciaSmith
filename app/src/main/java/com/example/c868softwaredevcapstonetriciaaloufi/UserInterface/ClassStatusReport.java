@@ -54,6 +54,10 @@ public class ClassStatusReport extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.SpinnerAdapter, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         classStatusSpinner.setAdapter(adapter);
+        if (classStatus != null) {
+            int spinnerPosition = adapter.getPosition(classStatus);
+            classStatusSpinner.setSelection(spinnerPosition);
+        }
        int currentSelection = classStatusSpinner.getSelectedItemPosition();
        classStatusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
            @Override

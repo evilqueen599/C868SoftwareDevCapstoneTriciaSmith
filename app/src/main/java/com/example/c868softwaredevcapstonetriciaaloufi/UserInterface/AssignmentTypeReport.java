@@ -54,6 +54,10 @@ public class AssignmentTypeReport extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.assignmentSpinnerAdapter, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         assignTypeSpinner.setAdapter(adapter);
+        if (assignType != null) {
+            int spinnerPosition = adapter.getPosition(assignType);
+            assignTypeSpinner.setSelection(spinnerPosition);
+        }
         int currentSelection = assignTypeSpinner.getSelectedItemPosition();
         assignTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

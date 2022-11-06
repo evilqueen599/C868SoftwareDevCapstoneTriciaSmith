@@ -3,20 +3,19 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
-android:stretchColumns="1"
-android:shrinkColumns="7-1"
-    >
+android:stretchColumns="*">
 <View
     android:layout_height="2dp"
     android:layout_width="match_parent"
     android:background="#c0c0c0"/>
 <TableRow
     android:background="@drawable/shape_table"
-    android:layout_width="match_parent"
+    android:layout_width="0dp"
     android:layout_height="wrap_content">
     <TextView
         android:id="@+id/classReportName"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:background="@drawable/shape_table"
@@ -27,7 +26,8 @@ android:shrinkColumns="7-1"
         android:background="#c0c0c0"/>
     <TextView
         android:id="@+id/classReportStartDate"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="2"
         android:background="@drawable/shape_table"
@@ -38,7 +38,8 @@ android:shrinkColumns="7-1"
         android:background="#c0c0c0"/>
     <TextView
         android:id="@+id/classReportEndDate"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="3"
         android:background="@drawable/shape_table"
@@ -50,7 +51,8 @@ android:shrinkColumns="7-1"
 
     <TextView
         android:id="@+id/classReportClassStatus"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="4"
         android:background="@drawable/shape_table"
@@ -62,7 +64,8 @@ android:shrinkColumns="7-1"
 
     <TextView
         android:id="@+id/classReportInstructorName"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="5"
         android:background="@drawable/shape_table"
@@ -73,7 +76,8 @@ android:shrinkColumns="7-1"
         android:background="#c0c0c0"/>
     <TextView
         android:id="@+id/classReportInstructorPhone"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="6"
         android:background="@drawable/shape_table"
@@ -84,7 +88,8 @@ android:shrinkColumns="7-1"
         android:background="#c0c0c0"/>
     <TextView
         android:id="@+id/classReportInstructorEmail"
-        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_column="7"
         android:background="@drawable/shape_table"

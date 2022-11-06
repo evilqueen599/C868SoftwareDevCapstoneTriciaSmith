@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         repository.insert(assignments1);
         Assignments assignments2 = new Assignments(3, "Capstone Project","10/26/2022", "11/28/2023", "Objective Assessment", 2);
         repository.insert(assignments2);
-        Assignments assignments3 = new Assignments(4, "English Paper","10/26/2022", "11/28/2023", "Summary Essay", -1);
+        Assignments assignments3 = new Assignments(4, "English Paper","10/26/2022", "11/28/2023", "Summary Essay", 3);
         repository.insert(assignments3);
-        Assignments assignments4 = new Assignments(5, "Research Writing","10/26/2022", "11/28/2023", "Research Essay", -11);
+        Assignments assignments4 = new Assignments(5, "Research Writing","10/26/2022", "11/28/2023", "Research Essay", 3);
         repository.insert(assignments4);
     }
     public void enterButton(View view) {

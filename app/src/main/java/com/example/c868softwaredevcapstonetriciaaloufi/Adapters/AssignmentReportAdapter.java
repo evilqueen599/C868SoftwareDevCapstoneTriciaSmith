@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
-import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 
 import java.util.List;

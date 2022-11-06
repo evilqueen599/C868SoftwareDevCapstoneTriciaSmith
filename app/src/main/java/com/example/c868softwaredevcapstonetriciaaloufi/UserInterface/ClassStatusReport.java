@@ -27,21 +27,13 @@ import java.util.List;
 public class ClassStatusReport extends AppCompatActivity {
 
     Spinner classStatusSpinner;
-
     RecyclerView classReportView;
-
     TextView classReportTimeStamp;
-
     TextView classReportTxt;
-
     String classStatus;
-
     Repository repository;
-
     ClassReportAdapter classAdapter;
-
     List<Classes> classesFull;
-
     ArrayList<Classes> filteredClasses;
 
     protected void onCreate(Bundle savedInstanceState) {

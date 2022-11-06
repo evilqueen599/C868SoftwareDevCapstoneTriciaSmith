@@ -1,8 +1,5 @@
 package com.example.c868softwaredevcapstonetriciaaloufi.UserInterface;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,12 +18,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.AssignmentReportAdapter;
 import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
-import com.example.c868softwaredevcapstonetriciaaloufi.MyBroadcastReceiver;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AssignmentTypeReport extends AppCompatActivity {

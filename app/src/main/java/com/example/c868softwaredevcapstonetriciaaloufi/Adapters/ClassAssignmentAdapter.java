@@ -11,11 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
-import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
-import com.example.c868softwaredevcapstonetriciaaloufi.UserInterface.AddAssignment;
 import com.example.c868softwaredevcapstonetriciaaloufi.UserInterface.AddClass;
-import com.example.c868softwaredevcapstonetriciaaloufi.UserInterface.Home;
 
 import java.util.List;
 

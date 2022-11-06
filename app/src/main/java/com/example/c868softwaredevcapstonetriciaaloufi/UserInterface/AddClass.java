@@ -43,80 +43,44 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AddClass extends AppCompatActivity {
+
     private DatePickerDialog datePickerDialog;
-
     private DatePickerDialog endDatePickerDialog;
-
     private Button startDateButton;
-
     private Button endDateButton;
-
     private Button addClassBtn;
-
     private FloatingActionButton addAssignmentsBtn;
-
     private int classId;
-
     private int editSemesterId;
-
     private Spinner classStatusBar;
-
     private EditText classTitleTxt;
-
     private EditText classNoteTxt;
-
     private EditText classInstructorTxt;
-
     private EditText instructorPhoneTxt;
-
     private EditText instructorEmailAddressTxt;
-
     private String classStatus;
-
     private String startDate;
-
     private String endDate;
-
     private String className;
-
     private String instructorName;
-
     private String instructorEmail;
-
     private String instructorPhone;
-
     private String classNote;
-
     private String editClassTitleTxt;
-
     private String editClassNoteTxt;
-
     private String editInstructorTxt;
-
     private String editInstructorPhoneTxt;
-
     private String editInstructorEmailTxt;
-
     private String editClassStatus;
-
     private String editEndDate;
-
     private String editStartDate;
-
     Repository repository;
-
     Classes classes;
-
     ClassAssignmentAdapter assessmentAdapter;
-
     List<Assignments> assocAssess;
-
     List<Assignments> assessInCourse;
-
     List<Assignments> unassignedAssessments;
-
     SimpleDateFormat formatter;
-
     String format;
 
     protected void onCreate(Bundle savedInstanceState) {

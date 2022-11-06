@@ -18,10 +18,6 @@ import java.util.List;
 
 public class SemesterAdapter extends RecyclerView.Adapter<SemesterAdapter.SemesterViewHolder> {
 
-    public Semesters getSemester(int AdapterPosition) {
-        return mSemesters.get(AdapterPosition);
-    }
-
     public void setSemesters(List<Semesters> semesters) {
         mSemesters = semesters;
         notifyDataSetChanged();

@@ -51,8 +51,6 @@ public class AddAssignment extends AppCompatActivity {
     SimpleDateFormat formatter;
     String format;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

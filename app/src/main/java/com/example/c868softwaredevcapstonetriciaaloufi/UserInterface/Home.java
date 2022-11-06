@@ -1,42 +1,30 @@
 package com.example.c868softwaredevcapstonetriciaaloufi.UserInterface;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Filter;
 import android.widget.RadioButton;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.AssignmentAdapter;
 import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.ClassAdapter;
 import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.SemesterAdapter;
-import com.example.c868softwaredevcapstonetriciaaloufi.Database.AssignmentDAO;
-import com.example.c868softwaredevcapstonetriciaaloufi.Database.Database;
 import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -17,9 +17,6 @@ import com.example.c868softwaredevcapstonetriciaaloufi.UserInterface.AddClass;
 import java.util.List;
 
 public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHolder> {
-    public Classes getClasses(int AdapterPosition) {
-        return mClasses.get(AdapterPosition);
-    }
 
     class ClassViewHolder extends RecyclerView.ViewHolder {
         private final TextView className;

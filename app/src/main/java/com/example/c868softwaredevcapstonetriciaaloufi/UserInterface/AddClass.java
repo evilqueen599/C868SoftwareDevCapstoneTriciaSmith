@@ -29,7 +29,6 @@ import com.example.c868softwaredevcapstonetriciaaloufi.Adapters.ClassAssignmentA
 import com.example.c868softwaredevcapstonetriciaaloufi.Database.Repository;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Assignments;
 import com.example.c868softwaredevcapstonetriciaaloufi.Models.Classes;
-import com.example.c868softwaredevcapstonetriciaaloufi.Models.Semesters;
 import com.example.c868softwaredevcapstonetriciaaloufi.MyBroadcastReceiver;
 import com.example.c868softwaredevcapstonetriciaaloufi.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -260,11 +259,15 @@ public class AddClass extends AppCompatActivity {
             classNote = classNoteTxt.getText().toString();
             Pattern pattern = Pattern.compile(".*"+"@"+"."+".*");
             Matcher matcher = pattern.matcher(instructorEmailAddressTxt.getText().toString());
+            Pattern pattern1 = pattern.compile("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}");
+            Matcher matcher1 = pattern1.matcher(instructorPhoneTxt.getText().toString());
 
             if (isNull()) {
                 return;
             }else if (!matcher.find()){
                 Toast.makeText(AddClass.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
+            }else if (!matcher1.find()) {
+                Toast.makeText(AddClass.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
             }else if (classId == -1) {
                 int newCourseId = repository.getAllClasses().get(repository.getAllClasses().size() - 1).getClassId() +1;
                 classes = new Classes(newCourseId, className, instructorName, instructorEmail, instructorPhone, classStatus, startDate, endDate, classNote, editSemesterId);
@@ -295,11 +298,11 @@ public class AddClass extends AppCompatActivity {
         else if (classInstructorTxt.getText().toString().isEmpty()) {
             Toast.makeText(this, "The class must have an Instructor.", Toast.LENGTH_SHORT).show();
             return true;
-        }else if (instructorPhoneTxt.getText().toString().isEmpty()) {
-            Toast.makeText(this, "The class must have an Instructor phone number.", Toast.LENGTH_SHORT).show();
-            return true;
         }else if (instructorEmailAddressTxt.getText().toString().isEmpty()) {
             Toast.makeText(this, "The class must have an Instructor email address.", Toast.LENGTH_SHORT).show();
+            return true;
+        }else if (instructorPhoneTxt.getText().toString().isEmpty()) {
+            Toast.makeText(this, "The class must have an Instructor phone number.", Toast.LENGTH_SHORT).show();
             return true;
         } else if (classStatusBar == null) {
             Toast.makeText(this, "The class must have a status.", Toast.LENGTH_SHORT).show();

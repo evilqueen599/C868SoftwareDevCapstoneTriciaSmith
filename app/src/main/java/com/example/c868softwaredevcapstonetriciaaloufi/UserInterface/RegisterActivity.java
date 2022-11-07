@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean validator() {
         String firstname = firstName.getText().toString().trim();
         String lastname = lastName.getText().toString().trim();
-        Pattern pattern = Pattern.compile(".*" + "@" + "." + ".*");
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher matcher = pattern.matcher(regEmailAddress.getText().toString());
         String email = regEmailAddress.getText().toString().trim();
         String username = userName.getText().toString().trim();

@@ -221,9 +221,9 @@ public class AddClass extends AppCompatActivity {
             startDate = startDateButton.getText().toString();
             endDate = endDateButton.getText().toString();
             classNote = classNoteTxt.getText().toString();
-            Pattern pattern = Pattern.compile(".*"+"@"+"."+".*");
+            Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
             Matcher matcher = pattern.matcher(instructorEmailAddressTxt.getText().toString());
-            Pattern pattern1 = pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+            Pattern pattern1 = pattern.compile("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}");
             Matcher matcher1 = pattern1.matcher(instructorPhoneTxt.getText().toString());
 
             if (isNull()) {
